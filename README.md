@@ -1,2 +1,2 @@
 # yl
-Solves the training tasks: pure Python + PyQT5, pygame, django.
+Solves the training tasks: pure Python + argparse, PyQT5, pygame, django.
