@@ -1,3 +1,7 @@
+# Копирование одного файла в другой с параметрами: файл1, файл2, перевод в верхний регистр, количество копируемых строк
+# Copying one file to another one. Arguments: path_to_file1, path_to_file2, copy the uppercase text, number of lines to copy
+
+
 import argparse
 
 parser = argparse.ArgumentParser()  #создаем объект класса ArgumentParser из модуля argparse
