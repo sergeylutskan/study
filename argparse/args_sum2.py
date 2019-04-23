@@ -1,3 +1,6 @@
+# Сложение двух аргументов, при этом сначала проверяется их количество
+# Addition of the two arguments. Checking the number of arguments first.
+
 import argparse
 
 parser = argparse.ArgumentParser()  #создаем объект класса ArgumentParser из модуля argparse
