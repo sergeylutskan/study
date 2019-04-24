@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div>
+	<h1 class="h1">Проверка делимости</h1>
+	<form method="post" name="div_mod">
+	
+	<div class="input-group input-group-sm mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-sm">Число №1</span>
+  </div>
+  <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="num1">
+</div>
+	
+	<div class="input-group input-group-sm mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-sm">Число №2</span>
+  </div>
+  <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="num2">
+</div>
+	<div>
+<button class="btn btn-primary" type="submit">Проверить</button>
+	</div>
+	
+
+  </form>
+</div>
+
+	
+{% endblock %}

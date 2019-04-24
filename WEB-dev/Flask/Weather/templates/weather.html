@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block content %}
+	{% if choose == 'week' %}
+		{% for i in range(7) %}
+		<div>
+		<ul class="list-group">
+		  <li class="list-group-item active">{{weather['weather'][i]["date"]}}</li>
+		  <li class="list-group-item"><b>Температура воздуха:</b>{{weather['weather'][i]["temp"]}}</li>
+		  <li class="list-group-item"><b>Погода:</b>{{weather['weather'][i]["sky"]}}</li>
+		  <li class="list-group-item"><b>Влажность:</b>{{weather['weather'][i]["humidity"]}}</li>
+		  <li class="list-group-item"><b>Давление:</b> {{weather['weather'][i]["pressure"]}}</li>
+		</ul>
+		</div>
+		{% endfor %}
+	{% elif choose == 'tomorrow' %}
+			<div class="list-group">
+			  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start ">
+				<div class="d-flex w-100 justify-content-between">
+				  <h5 class="mb-1">Прогноз погоды на завтра {{weather['weather'][0]["date"]}}</h5>
+				  
+				</div>
+				<p class="mb-1">
+				<div><b>Температура воздуха</b> будет колебаться в районе {{weather['weather'][0]["temp"]}} градусов по Цельсию</div>
+			<div>Взглянув на небо, вы увидите, что сейчас <b>{{weather['weather'][0]["sky"]}}</b></div>
+			<div><b>Относительная влажность</b> воздуха сегодня составит  {{weather['weather'][0]["humidity"]}}</div>
+			<div><b>Атмосферное давление</b> в пределах {{weather['weather'][0]["pressure"]}} мм.рт.ст.</div>
+				</p>
+				<small>Одевайтесь по погоде!</small>
+			  </a>
+			</div>
+			
+	{% elif choose == '3days' %}
+		{% for i in range(3) %}
+		<div>
+		<ul class="list-group">
+		  <li class="list-group-item active">{{weather['weather'][i]["date"]}}</li>
+		  <li class="list-group-item"><b>Температура воздуха:</b>{{weather['weather'][i]["temp"]}}</li>
+		  <li class="list-group-item"><b>Погода:</b>{{weather['weather'][i]["sky"]}}</li>
+		  <li class="list-group-item"><b>Влажность:</b>{{weather['weather'][i]["humidity"]}}</li>
+		  <li class="list-group-item"><b>Давление:</b> {{weather['weather'][i]["pressure"]}}</li>
+		</ul>
+		</div>
+		{% endfor %}
+	{% elif choose == 'month' %}
+		<div>
+		<table class="table">
+		  <thead>
+			<tr>
+			  <th scope="col">Дата</th>
+			  <th scope="col">Температура</th>
+			</tr>
+		  </thead>
+		  <tbody>
+		{% for item in weather['weather'] %}
+		<tr>
+			<td>{{item["date"]}}</td>
+			<td>{{item["temp"]}}</td>
+		</tr>
+		{% endfor %}
+		</tbody>
+		</table>
+		</div>
+	{% endif %}
+{% endblock %}

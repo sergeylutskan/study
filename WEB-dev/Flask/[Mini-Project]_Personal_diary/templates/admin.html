@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    
+	<p>Вы вошли как {{username}}  <a href="/logout">Выход</a></p>
+	
+    {% for item in news %}
+		
+        <div class="alert alert-dark" role="alert">
+            <h2>Пользователь {{item[0]}}</h2>
+            <div>опубликовал {{item[1]}} записей.</div>
+			
+            
+        </div>
+    {% endfor %}
+{% endblock %}

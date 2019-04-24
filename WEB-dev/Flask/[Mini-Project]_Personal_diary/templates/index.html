@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <a href="/add_news">Добавить новость</a>
+	<p>Вы вошли как {{username}}  <a href="/logout">Выход</a></p>+
+	<div>Сортировка: <a href="/sort_by/1">по алфавиту, </a><a href="/sort_by/2">по дате добавления.</a></div>
+    {% for item in news %}
+        <div class="alert alert-dark" role="alert">
+            <h2>{{item[1]}}</h2>
+            <div>{{item[2]}}</div>
+			
+            <a href="/delete_news/{{item[0]}}">Удалить новость</a>
+        </div>
+    {% endfor %}
+{% endblock %}

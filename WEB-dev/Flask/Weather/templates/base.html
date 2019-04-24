@@ -1,0 +1,33 @@
+<html>
+<head>
+    <meta charset="utf-8">  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>{{title}}</title>
+</head>
+  <body>
+    <div>
+	<h1 class="h1">Прогноз погоды</h1>
+	<form method="post">
+	<div class="input-group mb-3">
+	<div class="input-group-prepend">
+    <label class="input-group-text" for="inputGroupSelect01">Прогноз на:</label>
+	</div>
+	<select class="custom-select" id="inputGroupSelect01" name="weather">
+    <option selected>(выберите)</option>
+	<option value=tomorrow>завтра</option>
+	<option value=3days>3 дня</option>
+	<option value=week>неделю</option>
+	<option value=month>месяц</option>
+  </select>
+    <div class="input-group-append">
+    <button class="btn btn-outline-secondary" type="submit" >Отправить</button>
+  </div>
+  </form>
+</div>
+
+	</div>
+    <div>
+        {% block content %}{% endblock %}
+    </div>
+  </body>
+</html>
